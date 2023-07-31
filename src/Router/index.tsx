@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import { AuthLayout } from "../ui/layouts/AuthLayout";
+import { SignIn } from "../ui/pages/SignIn";
+import { SignUp } from "../ui/pages/SignUp";
 import { AuthGuard } from "./AuthGuard";
 
 export function Router() {
@@ -7,8 +10,10 @@ export function Router() {
     <BrowserRouter>
       <Routes>
         <Route element={<AuthGuard />}>
-          <Route path="/signin" element={<h1>Signin</h1>} />
-          <Route path="/signup" element={<h1>signup</h1>} />
+          <Route element={<AuthLayout />}>
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Route>
         </Route>
 
         <Route element={<AuthGuard isPrivate />}>
