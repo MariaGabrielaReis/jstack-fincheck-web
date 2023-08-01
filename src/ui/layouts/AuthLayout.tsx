@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+
 import illustration from "../../assets/illustration.png";
 import { Logo } from "../components/Logo";
 
