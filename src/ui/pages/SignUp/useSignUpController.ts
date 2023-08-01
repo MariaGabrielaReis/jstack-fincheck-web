@@ -1,6 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+
+import { authService } from "../../../app/services/authService";
+import { SignUpParams } from "../../../app/services/authService/signup";
 
 const schema = z.object({
   name: z.string().nonempty("Nome é obrigatório"),
@@ -23,9 +27,16 @@ export function useSignUpController() {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const handleSubmit = hookFormHandleSubmit(data => {
-    console.log({ data });
+  const { isLoading, mutateAsync } = useMutation({
+    mutationFn: async (data: SignUpParams) => {
+      return authService.signUp(data);
+    },
   });
 
-  return { register, handleSubmit, errors };
+  const handleSubmit = hookFormHandleSubmit(async data => {
+    const { accessToken } = await mutateAsync(data);
+    console.log({ accessToken });
+  });
+
+  return { register, handleSubmit, isLoading, errors };
 }
