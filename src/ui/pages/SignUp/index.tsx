@@ -5,7 +5,7 @@ import { Input } from "../../components/Input";
 import { useSignUpController } from "./useSignUpController";
 
 export function SignUp() {
-  const { register, handleSubmit, errors } = useSignUpController();
+  const { register, handleSubmit, isLoading, errors } = useSignUpController();
 
   return (
     <>
@@ -46,7 +46,7 @@ export function SignUp() {
           {...register("password")}
         />
 
-        <Button type="submit" className="mt-2">
+        <Button type="submit" className="mt-2" isLoading={isLoading}>
           Criar conta
         </Button>
       </form>
