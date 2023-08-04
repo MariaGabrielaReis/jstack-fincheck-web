@@ -1,27 +1,73 @@
-# React + TypeScript + Vite
+<div align="center"> <img src="https://github.com/MariaGabrielaReis/jstack-fincheck-api/assets/69374340/e2aca505-b920-449c-9f30-b6f840761096" /> </div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend para o projeto Fincheck, um app para gerenciamento de finanças pessoais! 💸 <br>
+**Aplicação construída em um evento do JStack** :fire:
 
-Currently, two official plugins are available:
+> :hammer_and_wrench: Tecnologias e ferramentas: **TypeScript, Vite, React, Tailwindcss, Axios**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## :gear: Como rodar
 
-## Expanding the ESLint configuration
+Com o [Node](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) e [Git](https://git-scm.com/) instalados, siga o tutorial abaixo:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<details>
+ <summary>Para iniciar o <b>servidor</b>:</summary>
+ <br>
 
-- Configure the top-level `parserOptions` property like this:
+```bash
+# Clone esse repositório
+$ git clone https://github.com/MariaGabrielaReis/jstack-fincheck-api.git
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+# Instale as dependências do projeto, assim como suas tipagens
+$ yarn
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Antes de rodar o projeto, crie o arquivo `.env` (na raíz do projeto) com as seguintes variáveis:
+
+```bash
+# DATABASE
+DATABASE_URL="postgresql://<USER>:<PASSWORD>@localhost:5432/fincheck?schema=public"
+JWT_SECRET=
+```
+
+Agora execute a aplicação com o comando abaixo, assim o servidor inciará na porta:3333:
+
+```bash
+# Execute a aplicação
+$ yarn dev
+```
+
+</details>
+
+<details>
+ <summary>Para iniciar <b>este projeto</b>:</summary>
+ <br>
+
+```bash
+# Clone esse repositório
+$ git clone https://github.com/MariaGabrielaReis/jstack-fincheck-web.git
+
+# Instale as dependências do projeto, assim como suas tipagens
+$ yarn
+```
+
+Antes de rodar o projeto, crie o arquivo `.env` (na raíz do projeto) com as seguintes variáveis:
+
+```bash
+# URL do servidor (será usada como "baseURL" pelo Axios)
+VITE_API_URL=
+```
+
+Agora execute a aplicação com o comando abaixo, assim o site inciará na porta:5173:
+
+```bash
+# Execute a aplicação
+$ yarn dev
+```
+
+</details>
+
+<br>
+
+> Desmontração em breve...
+
+[![image](https://img.shields.io/badge/✨%20Maria%20Gabriela%20Reis,%202023-LinkedIn-009973?style=flat-square)](https://www.linkedin.com/in/mariagabrielareis/)
